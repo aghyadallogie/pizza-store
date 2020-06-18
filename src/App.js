@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PizzaList } from './components/PizzaList';
+import { PizzaContext } from './contexts/PizzaContext';
 import './App.scss';
 
 function App() {
+  let { restaurantName } = useContext(PizzaContext);
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Pizza Store</h1>
+        <h1>{restaurantName}</h1>
       </header>
-      <main>Pizza List</main>
+      <PizzaList />
     </div>
   );
 }
